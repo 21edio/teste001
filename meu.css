@@ -1,0 +1,54 @@
+.ta
+{
+    font-size: 80px;
+}
+
+.meu:hover
+{
+    color: white;
+    background-color:palegreen;
+ 
+}
+
+.butao
+{
+    font-size: 50px;
+    
+}
+
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.homefondo
+{
+    background-color: aqua;
+}
+
+.tamanhot
+{
+    font-size: 50px;
+}
+
+.luz:hover
+{
+    color:blue;
+    background-color: black;
+}
+
+.justifiar
+{
+    text-align: justify;
+}
+
+.carta:hover
+{
+    color:blue;
+}
+
+.titulo:hover
+{
+    color: red;
+}

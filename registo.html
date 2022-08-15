@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="meu.css">
+</head>
+
+<body>
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">DnCode_Bank</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#minhanav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse " id="minhanav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link text-white" href="teste.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="registo.html">Abrir Conta</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="deposito.html">Depositos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="levanta.html">Levantamentos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cont.html">Nossos Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="transferencia.html">Transferencia</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"> Gerar Relatorio</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Imprimir em PDF</a></li>
+                            <li><a class="dropdown-item" href="#">Imprimir em Word</a></li>
+                            <li><a class="dropdown-item" href="#">Imprimir em Exel</a></li>                    
+                        </ul>
+                    </li>   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center text-white mt-5">ABertura de Conta</h2>
+        <h2 class="text-center text-dark mt-2">ABertura de Conta</h2>
+      
+        <div class="card bg-primary p-5">
+        <form >
+            <div class="row">
+                <div class="col-md-4">
+                    <Label class="form-label">Nome</Label>
+                    <input type="text" name="nome" class="form-control">
+                </div>
+    
+                <div class="col-md-4">
+                    <Label class="form-label">Apelido</Label>
+                    <input type="text" name="apelido" class="form-control">
+                </div>
+    
+                <div class="col-md-4">
+                    <Label class="form-label">Data de Nascimento</Label>
+                    <input type="date" name="data" class="form-control">
+                </div>
+    
+            </div>
+    
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <Label class="form-label">Filiacao Pai</Label>
+                    <input type="text" name="pai" class="form-control">
+                </div>
+    
+                <div class="col-md-6">
+                    <Label class="form-label">Filiacao Mae</Label>
+                    <input type="text" name="mae" class="form-control">
+                </div>
+    
+            </div>
+    
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <Label class="form-label">Tipo de Conta</Label>
+                    <select class="form-select" name="conta">
+                        <option >Selecione</option>
+                        <option >Poupanca</option>
+                        <option >Conta para Crianca</option>
+                        <option >Conta Propria</option>
+                    </select>
+                </div>
+    
+                <div class="col-md-4">
+                    <Label class="form-label">N do B.I</Label>
+                    <input type="text" name="bi" class="form-control">
+                </div>
+    
+                <div class="col-md-4">
+                    <Label class="form-label">Nuit</Label>
+                    <input type="text" name="nuit" class="form-control">
+                </div>
+    
+            </div>
+
+            <div class="row mt-2">
+               
+                <div class="col-md-4">
+                    <Label class="form-label">Primeiro Deposito</Label>
+                    <input type="number" name="pdeposito" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <Label class="form-label">Contacto</Label>
+                    <input type="number" name="tel" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <Label class="form-label">Numero da Conta</Label>
+                    <input type="number" name="nconta" class="form-control bg-light" placeholder="Não Preencer" readonly>
+                </div>
+    
+            </div>
+    
+           
+                <button type="button" class="btn btn-danger mt-4" onclick="btnCancelar(this);">Cancelar</button>
+                <button type="button" class="btn btn-success mt-4" onclick="registro(this);">Submeter</button>
+        
+             <div class="float-end mt-4">
+              
+             </div>
+           
+        </form>
+    </div>
+    
+
+        <h2 class="text-center mt-5">Dados de Registo de Contas</h2>
+       <div class="table-responsive">
+        <table class="table mt-3 border">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Apelido</th>
+                    <th>Data de Nascimento</th>
+                    <th>Filiacao Pai</th>
+                    <th>Filiacao Mae</th>
+                    <th>Tipo de Conta</th>
+                    <th>Numero de BI</th>
+                    <th>Numero de Nuit</th>
+                    <th>Numero da Conta</th>
+                    <th>Telefone</th>
+                    <th>Saldo </th>
+                
+                </tr>
+            </thead>
+
+            <tbody id="info">
+
+            </tbody>
+
+        </table>
+    </div>
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#meumodal">Listar Clientes</button>
+
+        <div class="float-end">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#editar">Editar Dados</button>
+        </div>
+        
+       
+        
+        
+        
+<div class="modal fade" id="meumodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lista dos Clientes Activos </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
+
+            </div>
+
+            <div class="modal-body">
+                <h3>Clientes activos</h3>
+              
+                <table class="table mt-3 border">
+
+                    <thead>
+                        <tr class="table-primary">
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Apelido</th> 
+                            <th>Numero da Conta</th>                 
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+            
+                        <tr>
+                            <td>1</td>
+                            <td>Edio Alberto </td>
+                            <td>Ngomacha</td>
+                           
+                            <td>11000098</td>
+                           
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>2</td>
+                            <td>Antonia</td>
+                            <td>Langa</td>
+                            
+                            <td>11000098</td>
+                         
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>3</td>
+                            <td>Laila Alberto</td>
+                            <td>Abreu</td>
+                           
+                            <td>11000034</td>
+                          
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>4</td>
+                            <td>Atalia Uamba</td>
+                            <td>Lai</td>
+                           
+                            <td>81000084</td>
+                        
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>5</td>
+                            <td>Jose Fabião</td>
+                            <td>Ngoenha</td>
+                         
+                            <td>10000084</td>
+                         
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>6</td>
+                            <td>Victor Rafael</td>
+                            <td>Manjate</td>
+                         
+                            <td>09000084</td>
+                       
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>7</td>
+                            <td>Faira Alberto</td>
+                            <td>Almeida</td>
+                        
+                            <td>55000084</td>
+                         
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>8</td>
+                            <td>Maria Izabel</td>
+                            <td>Junior</td>
+                      
+                            <td>11011084</td>
+                    
+                            <td>
+                                <input type="checkbox" class="input-form-check" checked>
+                            </td>
+                        </tr>
+                    </tbody>
+            
+                </table>
+            </div>
+            </div>
+
+          
+
+            <div class="modal-footer">
+           
+                
+            </div>
+        </div>
+      
+    
+    </div>
+
+
+   
+    <div class="modal fade" id="editar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Dados </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
+
+                </div>
+
+                <div class="modal-body">
+                    <h3 class="text-center">Alterar Dados</h3>
+                    
+                  <form>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="form-label">Informe o número da Linha </label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="form-label">Informe o dado a ser Editado</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="form-label">Alterar para?</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                   
+                  </form>
+                       
+                </div>
+
+              
+
+                <div class="modal-footer">
+               
+                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Apagar</button>
+                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">Alterar</button>
+
+                </div>
+            </div>
+          
+        
+        </div>
+
+    
+    </div>
+
+
+
+
+    </div>
+    
+
+    <script src="bootstrap.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="registar.js"></script>
+   
+</body>
+</html>

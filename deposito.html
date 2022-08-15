@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposito</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="meu.css">
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">DnCode_Bank</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#minhanav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse " id="minhanav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link text-white" href="teste.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="registo.html">Abrir Conta</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="deposito.html">Depositos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="levanta.html">Levantamentos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cont.html">Nossos Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="transferencia.html">Transferencia</a></li>
+
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"> Gerar Relatorio</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Imprimir em PDF</a></li>
+                            <li><a class="dropdown-item" href="#">Imprimir em Word</a></li>
+                            <li><a class="dropdown-item" href="#">Imprimir em Exel</a></li>
+                      
+                        </ul>
+                    </li>   
+
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+   
+        <h3 class="mt-5 text-center text-white">Depositos</h3>
+        <h3 class="mt-2 text-center">Depositos</h3>
+    <form >
+        <div class="row">
+            <div class="col-md-4">
+                <label class="form-label">Nome Completo</label>
+                <input type="text" name="nomec" class="form-control">
+            </div>
+            
+            <div class="col-md-4">
+                <label class="form-label">Numero da Conta</label>
+                <input type="number" name="numeroc" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Numero do BI</label>
+                <input type="number" name="bic" class="form-control">
+            </div>
+       
+       
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <label class="form-label">Data</label>
+            <input type="date" name="datac" class="form-control">
+        </div>
+        
+        <div class="col-md-4">
+            <label class="form-label">Hora</label>
+            <input type="time" name="horac" class="form-control">
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Numero do Registo</label>
+            <input type="null" name="numeroderegistoc" class="form-control" placeholder="Não Preencher">
+        </div>
+   
+   
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <label class="form-label">Quantia</label>
+            <input type="number" name="quantiac" class="form-control">
+        </div>
+        
+   
+    </div>
+    <button class="btn btn-success mt-3 float-end" type="button" onclick="depositar(this);" >Submeter</button>
+    </form>
+
+    <h2 class="mt-4 text-center mt-5">Registro dos Depositos</h2>
+
+    <div class="table-responsive">
+    <table class="table border">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Numero de Conta</th>
+                <th>Quantia</th>
+                <th>Data Deposito</th>
+                <th>Hora do Deposito</th>
+                <th>Numero de Registro</th>
+               
+            </tr>
+        </thead>
+
+        <tbody id="deposi">
+
+        </tbody>
+
+    </table>
+</div>
+    </div>
+    
+
+    <script src="bootstrap.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="dn.js"></script>
+</body>
+</html>
